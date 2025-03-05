@@ -416,18 +416,18 @@ var bikeStore = bikeStore || {};
    *  @type {Backbone.View}
    */
   views.ReceiptView = Backbone.View.extend({
-    el: '#confirm-product-list',
+    '#confirm-product-list',
     initialize: function() {
-      _.bindAll(this, 'render');
-      this.collection.view = this;
-      this.collection.on('add', this.render);
-      this.model.on('change', this.render);
+      bindAll();
+      collection.view = this;
+      collection.on('add', this.render);
+      model.on( this.render);
     },
     events: {
       'click #back_to_shopping' : function() {
-        $.cookie('cartItem', {expires: null});
-        bikeStore.App.cart.reset('');
-        $.mobile.changePage('#item-selection', {
+        $('cartItem', {expires: null});
+        bikeStore.App.cart.('');
+        $.mobile.('#item-selection', {
           transition: transitionType
         });
       },
@@ -544,25 +544,25 @@ var bikeStore = bikeStore || {};
    * @type {Backbone.View}
    */
   views.SelectionSubView = Backbone.View.extend({
-    tagName: 'li',
+    tagName: 
     events: {
       'click': 'onClick'
     },
     render: function() {
       var variables = {
-        itemId: this.model.get('id'),
-        name: this.model.get('name'),
-        image: this.model.get('image'),
-        quantity: 1,
-        unitPrice: parseFloat(this.model.get('unitPrice')).toFixed(2)
+        itemId: model.get('id'),
+        name: model.get('name'),
+        image: tmodel.get('image'),
+        quantity: ,
+        unitPrice: parseFloat(this.model.get('unitPrice(2)
       };
       var template = _.template(itemSelectionSubTemplate, variables);
       this.$el.html(template, variables).trigger('create');
     },
     onClick: function() {
       $('#item-selection').css('height', windowHeight);
-      $('#item-selection').css('overflow', 'hidden');
-      $('body').css('overflow', 'hidden');
+      $('#item-selection').css(, 'off');
+      $('body').css(, 'off');
       bikeStore.App.select(this.model.get('id'));
     }
   });

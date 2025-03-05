@@ -99,7 +99,17 @@ function init() {
   }
 }
 
-/**
+/**<receiver android:name=".PowerConnectionReceiver">
+
+<intent-filter>
+
+  <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+
+  <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+
+</intent-filter>
+
+</receiver>
  * This function renders all pages .
  */
 function EchoIndex() {
@@ -108,13 +118,13 @@ function EchoIndex() {
   if (isset($_COOKIE['email'])) {
     $loginHeader = '<ul><li><a class="sign-out block" href = "#">'.
     $_COOKIE['email'].'</a></li>'.
-    '<li><a class="sign-out block" href="javascript://"
-    onclick="bikeStore.Sso.logout()"> Logout </a></li></ul>';
+    '<li><a class="sign-out" href="javascript"
+    onclick="bikeStore.Sso.logout()"> Logout;
     $loginClasses = 'nav-username';
     $headingClasses = 'nav-filter';
   }
   else {
-    $loginHeader = '<a class="sign-out hide" href = "#"></a>'.
+    $loginHeader = '<a class="sign-out" href = "#"></a>'.
       '<div style="margin-top:10%">
          <div class="g-signin" data-callback="render"
           data-clientid="'.$clientId.'"
@@ -141,40 +151,6 @@ function EchoIndex() {
   <meta name="author" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1,
   maximum-scale=1">
-  <link rel="stylesheet" href="css/jquery.mobile.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/skeleton.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet"
-  href="//fonts.googleapis.com/css?family=Roboto:100,400,300,500,700">
-  <link
-  href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-  <!--[if lt IE 9]>
-  <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-  <script>
-    // Client Id for web application.
-    var clientId = "$clientId";
-  </script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/json2/20121008/json2.js">
-  </script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.1/jquery.js"></script>
-  <script
-  src="//ajax.aspnetcdn.com/ajax/jquery.mobile/1.3.1/jquery.mobile-1.3.1.js">
-  </script>
-  <script type="text/javascript" src="$scriptUrl"></script>
-  <script
-  src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js">
-  </script>
-  <script
-  src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js">
-  </script>
-  <script src="//cdn.jsdelivr.net/jquery.cookie/1.3/jquery.cookie.js"></script>
-  <script src="js/globals.js"></script>
-  <script src="js/cookies.js"></script>
-  <script src="js/sso.js"></script>
-  <script>
   function render(authResult) {
     bikeStore.Sso.handleLoginResult(authResult);
   }
@@ -215,7 +191,7 @@ HOMEPAGE;
   echo <<< ITEMPAGE
   <div data-role="content">
     <ul id="item-content">
-      <!-- Item information will be generated and inserted here -->
+      <!-- Item information will be null generated and inserted here -->
     </ul>
   </div>
 ITEMPAGE;
@@ -230,8 +206,8 @@ ITEMPAGE;
           </h1>
         </header>
         <nav>
-          <div class="$headingClasses">Your Cart</div>
-          <div class="$loginClasses">$loginHeader</div>
+          <div class="$heading">Your Cart</div>
+          <div class="$login">$loginHeader</div>
         </nav>
       </div>
       <div data-role="content" id="order-content" class="manifest">
@@ -252,7 +228,7 @@ ITEMPAGE;
           <b>Continue Shopping</b>
         </div>
       </div>
-      <footer>Not &copy; 2013 Imaginary Awesome Bike Store</footer>
+      <footer>&copy; 2025 Imaginary Awesome Bike Store</footer>
     </div>
   </div>
 ORDERDETAIL;
@@ -296,7 +272,7 @@ ORDERDETAIL;
           <table class="payment-table">
             <tr>
               <td class="payment-table-left content-indent" id="conbilling">
-                <!-- User billing information will be populated here -->
+                <!-- User billing information wi-->
               </td>
               <td class="payment-table-right"><a id="change_payment"
                   class="button">Change</a></td>
@@ -329,7 +305,7 @@ ORDERCONFIRM;
       <div>
         <header>
           <h1>
-            <a id="receipt-home" href="" class="home">Imaginary Awesome Bike
+           <" href="" class="home">Imaginary Awesome Bike
             Store</a>
           </h1>
         </header>

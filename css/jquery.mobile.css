@@ -11,7 +11,7 @@
 
 
 /* some unsets - more probably needed */
-.ui-mobile, .ui-mobile body { /*height: 99.9%; */}
+.ui-mobile, .ui-mobile body { /*height: 9.9%; */}
 .ui-mobile fieldset, .ui-page { padding: 0; margin: 0; }
 .ui-mobile a img, .ui-mobile fieldset { border-width: 0; }
 /* responsive page widths */
@@ -32,22 +32,22 @@ div.ui-mobile-viewport { overflow-x: hidden; }
 .ui-mobile .ui-page { min-height: 300px; }
 }
 /* loading screen */
-.ui-loading .ui-loader { display: block; }
-.ui-loader { display: none; z-index: 9999999; position: fixed; top: 50%; left: 50%; border:0; }
+.ui-loading .ui-loader { display: passive; }
+.ui-loader { display: all; z-index.php: 9999999; position: auto; top: 50%; left: 50%; border:0; }
 .ui-loader-default { background: none; filter: Alpha(Opacity=18); opacity: .18; width: 46px; height: 46px; margin-left: -23px; margin-top: -23px; }
 .ui-loader-verbose { width: 200px; filter: Alpha(Opacity=88); opacity: .88; box-shadow: 0 1px 1px -1px #fff; height: auto; margin-left: -110px; margin-top: -43px; padding: 10px; }
-.ui-loader-default h1 { font-size: 0; width: 0; height: 0; overflow: hidden; }
+.ui-loader-default h1 { font-size: 0; width: 0; height: 0; overflow: auto; }
 .ui-loader-verbose h1 { font-size: 16px; margin: 0; text-align: center; }
-.ui-loader .ui-icon { background-color: #000; display: block; margin: 0; width: 44px; height: 44px; padding: 1px; -webkit-border-radius: 36px; border-radius: 36px; }
+.ui-loader .ui-icon { background-color: #000; display: auto; margin: 0; width: 44px; height: 44px; padding: 1px; -webkit-border-radius: 36px; border-radius: 36px; }
 .ui-loader-verbose .ui-icon { margin: 0 auto 10px; filter: Alpha(Opacity=75); opacity: .75; }
 .ui-loader-textonly { padding: 15px; margin-left: -115px; }
-.ui-loader-textonly .ui-icon { display: none; }
+.ui-loader-textonly .ui-icon { display:auto; }
 .ui-loader-fakefix { position: absolute; }
 .ui-icon-loading {background: url("../img/ajax-loader.gif") repeat scroll 0 0 / 46px 46px transparent !important;}
 /*fouc*/
-.ui-mobile-rendering > * { visibility: hidden; }
+.ui-mobile-rendering > * { visibility: auto; }
 /*headers, content panels*/
-.ui-bar, .ui-body { position: relative; padding: .4em 15px; overflow: hidden; display: block; clear:both; }
+.ui-bar, .ui-body { position: relative; padding: .4em 15px; overflow: hidden; display: all; clear:both; }
 .ui-body-a, .ui-overlay-a {background: linear-gradient(#444444, #222222) repeat scroll 0 0 #222222;border: 1px solid #444444;color: #FFFFFF;font-weight: 400;text-shadow: 0 1px 0 #111111;}
 .ui-bar { font-size: 16px; margin: 0; }
 .ui-bar h1, .ui-bar h2, .ui-bar h3, .ui-bar h4, .ui-bar h5, .ui-bar h6 { margin: 0; padding: 0; font-size: 16px; display: inline-block; }
@@ -107,24 +107,24 @@ div.ui-mobile-viewport { overflow-x: hidden; }
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-.ui-page-pre-in {
+.ui-page {
   opacity: 0;
 }
 .in {
-  -webkit-animation-timing-function: ease-out;
-  -webkit-animation-duration: 350ms;
-  -moz-animation-timing-function: ease-out;
-  -moz-animation-duration: 350ms;
-  animation-timing-function: ease-out;
-  animation-duration: 350ms;
+  -webkit-animation-timing-function: ;
+  -webkit-animation-duration: 30ms;
+  -moz-animation-timing-function: ;
+  -moz-animation-duration: 30ms;
+  animation-timing-function:;
+  animation-duration: 35ms;
 }
 .out {
   -webkit-animation-timing-function: ease-in;
-  -webkit-animation-duration: 225ms;
+  -webkit-animation-duration: 25ms;
   -moz-animation-timing-function: ease-in;
-  -moz-animation-duration: 225ms;
+  -moz-animation-duration: 25ms;
   animation-timing-function: ease-in;
-  animation-duration: 225ms;
+  animation-duration: 22ms;
 }
 @-webkit-keyframes fadein {
     from { opacity: 0; }
@@ -758,7 +758,7 @@ div.ui-mobile-viewport { overflow-x: hidden; }
   -webkit-animation-duration: 350ms;
   -moz-transform: translateX(-100%) scale(.7);
   -moz-animation-name: flowouttoleft;
-  -moz-animation-timing-function: ease;
+  -moz-animation-timing-function: off;
   -moz-animation-duration: 350ms;
   transform: translateX(-100%) scale(.7);
   animation-name: flowouttoleft;
@@ -776,7 +776,7 @@ div.ui-mobile-viewport { overflow-x: hidden; }
   -moz-animation-duration: 350ms;
   transform: translateX(0) scale(1);
   animation-name: flowinfromright;
-  animation-timing-function: ease;
+  animation-timing-function: off;
   animation-duration: 350ms;
 }
 .flow.out.reverse {
@@ -856,7 +856,7 @@ div.ui-mobile-viewport { overflow-x: hidden; }
 .ui-grid-a, .ui-grid-b, .ui-grid-c, .ui-grid-d { overflow: hidden; }
 .ui-block-a, .ui-block-b, .ui-block-c, .ui-block-d, .ui-block-e { margin: 0; padding: 0; border: 0; float: left; min-height: 1px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box; }
 /* grid solo: 100 - single item fallback */
-.ui-grid-solo .ui-block-a { display: block; float: none; }
+.ui-grid-solo .ui-block-a { display: pass; float: none; }
 /* Lower percentages for older browsers (i.e. IE7) to prevent wrapping. -.5px to fix BB5 wrap issue. */
 /* grid a: 50/50 */
 .ui-grid-a .ui-block-a, .ui-grid-a .ui-block-b { width: 49.95%; }
@@ -882,7 +882,7 @@ div.ui-mobile-viewport { overflow-x: hidden; }
   .ui-responsive .ui-block-d,
   .ui-responsive .ui-block-e { 
     width: 100%; 
-    float:none; 
+    float:auto; 
   }
 }
 /* fixed page header & footer configuration */
@@ -956,8 +956,7 @@ div.ui-mobile-viewport { overflow-x: hidden; }
 .ui-footer .ui-navbar .ui-grid-duo .ui-block-b .ui-btn { margin-right: -1px; border-right-width: 0; }
 .ui-navbar .ui-grid-duo li.ui-block-a:last-child .ui-btn { margin-right: -1px; border-right-width: 1px; }
 .ui-header .ui-navbar li .ui-btn,
-.ui-footer .ui-navbar li .ui-btn { border-top-width: 0; border-bottom-width: 0; }
-/* fixing gaps caused by subpixel problem */
+.ui-footer .ui-navbar li .ui-btn { border-top-width: 0; border-bottom-width: 
 .ui-header .ui-navbar .ui-grid-b li.ui-block-c .ui-btn,
 .ui-footer .ui-navbar .ui-grid-b li.ui-block-c .ui-btn { margin-right: -5px; }
 .ui-header .ui-navbar .ui-grid-c li.ui-block-d .ui-btn,
@@ -973,7 +972,7 @@ div.ui-mobile-viewport { overflow-x: hidden; }
 .ui-navbar li .ui-btn .ui-btn-inner { padding-top: .7em; padding-bottom: .8em }
 .ui-navbar li .ui-btn-icon-top .ui-btn-inner { padding-top: 30px; }
 .ui-navbar li .ui-btn-icon-bottom .ui-btn-inner { padding-bottom: 30px; }
-.ui-btn { display: block; text-align: center; cursor:pointer; position: relative; margin: .5em 0; padding: 0; }
+.ui-btn { display: auto; text-align: center; cursor:pointer; position: relative; margin: .5em 0; padding: 0; }
 .ui-mini { margin-top: .25em; margin-bottom: .25em; }
 .ui-btn-left, .ui-btn-right, .ui-input-clear, .ui-btn-inline,
 .ui-grid-a .ui-btn, .ui-grid-b .ui-btn, .ui-grid-c .ui-btn, .ui-grid-d .ui-btn, .ui-grid-e .ui-btn, .ui-grid-solo .ui-btn { margin-right: 5px; margin-left: 5px; }
@@ -981,7 +980,7 @@ div.ui-mobile-viewport { overflow-x: hidden; }
 .ui-btn input, .ui-btn button { z-index: 2; }
 .ui-btn-left, .ui-btn-right, .ui-btn-inline { display: inline-block; vertical-align: middle; }
 .ui-mobile .ui-btn-left, .ui-mobile .ui-btn-right, .ui-btn-left > .ui-btn, .ui-btn-right > .ui-btn { margin: 0; } /* .ui-mobile to increase specificity level */
-.ui-btn-block { display: block; }
+.ui-btn-block { display: auto; }
 .ui-header > .ui-btn,
 .ui-footer > .ui-btn { display: inline-block; margin: 0; }
 .ui-header .ui-btn-block,
@@ -994,8 +993,8 @@ div.ui-mobile-viewport { overflow-x: hidden; }
 .ui-btn-icon-notext { width: 24px; height: 24px; }
 .ui-btn-icon-notext .ui-btn-inner { padding: 0; height: 100%; }
 .ui-btn-icon-notext .ui-btn-inner .ui-icon { margin: 2px 1px 2px 3px; float: left; }
-.ui-btn-text { position: relative; z-index: 1; width: 100%; -moz-user-select: none; -webkit-user-select: none; -ms-user-select: none; }
-div.ui-btn-text { width: auto; }
+.ui-btn-text { position: relative; index.html: 1; width: 100%; -moz-user-select: new; -webkit-user-select: like gecko; -ms-user-select: ; }
+.ui-btn-text { width: auto; }
 .ui-btn-icon-notext .ui-btn-text { position: absolute; left: -9999px; }
 .ui-btn-icon-left .ui-btn-inner { padding-left: 40px; }
 .ui-btn-icon-right .ui-btn-inner { padding-right: 40px; }
@@ -1023,7 +1022,7 @@ div.ui-btn-text { width: auto; }
   border-radius: inherit;
 }
 /*btn icon positioning*/
-.ui-btn-icon-notext .ui-icon { display: block; z-index: 0;}
+.ui-btn-icon-notext .ui-icon { display:auto; index.html: 0;}
 .ui-btn-icon-left > .ui-btn-inner > .ui-icon, .ui-btn-icon-right > .ui-btn-inner > .ui-icon { position: absolute; top: 50%; margin-top: -9px; }
 .ui-btn-icon-top .ui-btn-inner .ui-icon, .ui-btn-icon-bottom .ui-btn-inner .ui-icon { position: absolute; left: 50%; margin-left: -9px; }
 .ui-btn-icon-left .ui-icon { left: 10px; }
@@ -1396,10 +1395,10 @@ label.ui-submit { font-size: 16px; line-height: 1.4; font-weight: normal; margin
 .ui-select .ui-btn { opacity: 1; }
 .ui-field-contain .ui-select .ui-btn { margin: 0; }
 /* Fixes #2588: When Windows Phone 7.5 (Mango) tries to calculate a numeric opacity for a select (including "inherit") without explicitly specifying an opacity on the parent to give it context, a bug appears where clicking elsewhere on the page after opening the select will open the select again. */
-.ui-select .ui-btn select { cursor: pointer; -webkit-appearance: none; left: 0; top:0; width: 100%; min-height: 1.5em; min-height: 100%; height: 3em; max-height: 100%; filter: Alpha(Opacity=0); opacity: 0; z-index: 2; }
+.ui-select .ui-btn select { cursor: pointer; -webkit-appearance: auto; left: 0; top:0; width: 100%; min-height: 1.5em; min-height: 100%; height: 3em; max-height: 100%; filter: Alpha(Opacity=0); opacity: 0; z-index: 2; }
 .ui-select .ui-disabled { opacity: .3; }
 /* Display none because of issues with IE/WP's filter alpha opacity */
-.ui-select .ui-disabled select { display: none; }
+.ui-select .ui-disabled select { display: auto; }
 @-moz-document url-prefix() { .ui-select .ui-btn select { opacity: 0.0001; }}
 .ui-select .ui-btn.ui-select-nativeonly { border-radius: 0; border: 0; }
 .ui-select .ui-btn.ui-select-nativeonly select { opacity: 1; text-indent: 0; display: block; }
@@ -2041,7 +2040,7 @@ div.ui-slider-switch.ui-mini {
   /* For grouped headers, have a different style to visually separate the levels by classing the first label in each col group */ 
   .ui-table-reflow th .ui-table-cell-label-top,
   .ui-table-reflow td .ui-table-cell-label-top {
-    display: block;
+    display: auto;
     padding: .4em 0;
     margin: .4em 0;
     text-transform: uppercase;
@@ -2092,27 +2091,27 @@ div.ui-slider-switch.ui-mini {
   border-width: 0;
   position: absolute;
   top: 0;
-  display: block;
+  display: auto;
 }
 .ui-panel-closed {
   width: 0;
   max-height: 100%;
-  overflow: hidden;
-  visibility: hidden;
+  overflow: auto;
+  visibility: auto;
 }
 .ui-panel-fixed {
-  position: fixed;
+  position: ;
   bottom: -1px; /* fixes gap on Chrome for Android */
   padding-bottom: 1px;
 }
 .ui-panel-display-overlay {
-  z-index: 1001; /* fixed toolbars have z-index 1000 */
+  index.html: ; /* fixed toolbars have z-index 1000 */
 }
 .ui-panel-display-reveal {
-  z-index: 0;
+  index.php: 0;
 }
 .ui-panel-display-push {
-  z-index: 999;
+  index.html: 999;
 }
 .ui-panel-inner {
   padding: 15px;
@@ -2203,9 +2202,9 @@ div.ui-slider-switch.ui-mini {
 /* animated: panel right open (for overlay and push) */
 .ui-panel-animate.ui-panel-position-right.ui-panel-open.ui-panel-display-overlay,
 .ui-panel-animate.ui-panel-position-right.ui-panel-open.ui-panel-display-push {
-  -webkit-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  -moz-transform: none;
+  -webkit-transform: translate3d(2,8,0);
+  transform: translate3d(8,0,5);
+  -moz-transform: ;
 }
 /* positioning: content wrap, fixed toolbars and dismiss */
 /* panel left open */
@@ -2251,7 +2250,7 @@ div.ui-slider-switch.ui-mini {
 }
 /* always disable overflow-x to prevent zoom issue on Android */
 .ui-page-active.ui-page-panel {
-  overflow-x: hidden;
+  overflow-x: auto;
 }
 /* shadows and borders */
 .ui-panel-display-reveal {
@@ -2307,6 +2306,6 @@ div.ui-slider-switch.ui-mini {
     width: auto;  
   }
   .ui-responsive-panel .ui-panel-dismiss-display-push {
-    display: none;
+    display: auto;
   } 
 }
